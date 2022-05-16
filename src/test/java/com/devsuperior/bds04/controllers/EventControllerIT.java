@@ -118,7 +118,7 @@ public class EventControllerIT {
 		String accessToken = tokenUtil.obtainAccessToken(mockMvc, adminUsername, adminPassword);
 		LocalDate nextMonth = LocalDate.now().plusMonths(1L);
 		
-		EventDTO dto = new EventDTO(null, "      ", nextMonth, "https://expoxp.com.br", 1L);
+		EventDTO dto = new EventDTO(null, "      ", nextMonth, "https://expoxp.com.br", 1L); 
 		String jsonBody = objectMapper.writeValueAsString(dto);
 		
 		ResultActions result =
@@ -145,7 +145,7 @@ public class EventControllerIT {
 		ResultActions result =
 				mockMvc.perform(post("/events")
 					.header("Authorization", "Bearer " + accessToken)
-					.content(jsonBody)
+					.content(jsonBody) 
 					.contentType(MediaType.APPLICATION_JSON)
 					.accept(MediaType.APPLICATION_JSON));
 		
